@@ -1,0 +1,23 @@
+{
+  "presets": [
+    [
+      "es2015",
+      {
+        "modules": false
+      }
+    ],
+    "stage-0"
+  ],
+  "env": {
+    "production": {
+      "plugins": [
+        [
+          "transform-runtime"
+        ]
+      ]
+    },
+    "development": {
+      "plugins": []
+    }
+  }
+}

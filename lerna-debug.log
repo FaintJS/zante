@@ -1,0 +1,75 @@
+0 silly input [ 'publish' ]
+1 silly flags { _: [ 'publish' ], sort: true, concurrency: 4 }
+2 verbose rootPath /Users/hzhetao1/Desktop/repos/zante
+3 info version 2.0.0-rc.4
+4 silly isInitialized
+5 silly isInitialized true
+6 silly existsSync /Users/hzhetao1/Desktop/repos/zante/VERSION
+7 silly initialize attempt
+8 info current version 0.1.9-3
+9 silly getUpdates
+10 info Checking for updated packages...
+11 silly hasTags
+12 verbose hasTags true
+13 silly getLastTag
+14 verbose getLastTag v1.9.3
+15 info Comparing with tag v1.9.3
+16 silly getLastTaggedCommitInBranch
+17 silly getLastTag
+18 verbose getLastTag v1.9.3
+19 verbose getLastTaggedCommitInBranch a7739cfb52ab611dd5faf8deeb25ebbef4cb4eb2
+20 silly describeTag a7739cfb52ab611dd5faf8deeb25ebbef4cb4eb2
+21 silly describeTag v1.9.3
+22 silly diffSinceIn v1.9.3 /Users/hzhetao1/Desktop/repos/zante/packages/zante-plugin-assets
+23 silly diff
+24 silly diffSinceIn v1.9.3 /Users/hzhetao1/Desktop/repos/zante/packages/zante-plugin-commonchunk
+25 silly diff
+26 silly diffSinceIn v1.9.3 /Users/hzhetao1/Desktop/repos/zante/packages/zante-plugin-css
+27 silly diff
+28 silly diffSinceIn v1.9.3 /Users/hzhetao1/Desktop/repos/zante/packages/zante-plugin-development
+29 silly diff
+30 silly diffSinceIn v1.9.3 /Users/hzhetao1/Desktop/repos/zante/packages/zante-plugin-dll
+31 silly diff
+32 silly diffSinceIn v1.9.3 /Users/hzhetao1/Desktop/repos/zante/packages/zante-plugin-es
+33 silly diff
+34 silly diffSinceIn v1.9.3 /Users/hzhetao1/Desktop/repos/zante/packages/zante-plugin-eslint
+35 silly diff
+36 silly diffSinceIn v1.9.3 /Users/hzhetao1/Desktop/repos/zante/packages/zante-plugin-html
+37 silly diff
+38 silly diffSinceIn v1.9.3 /Users/hzhetao1/Desktop/repos/zante/packages/zante-plugin-less
+39 silly diff
+40 silly diffSinceIn v1.9.3 /Users/hzhetao1/Desktop/repos/zante/packages/zante-plugin-optimize
+41 silly diff
+42 silly diffSinceIn v1.9.3 /Users/hzhetao1/Desktop/repos/zante/packages/zante-plugin-production
+43 silly diff
+44 silly diffSinceIn v1.9.3 /Users/hzhetao1/Desktop/repos/zante/packages/zante-plugin-proxy
+45 silly diff
+46 silly diffSinceIn v1.9.3 /Users/hzhetao1/Desktop/repos/zante/packages/zante-plugin-react-hmr
+47 silly diff
+48 silly diffSinceIn v1.9.3 /Users/hzhetao1/Desktop/repos/zante/packages/zante-plugin-static
+49 silly diff
+50 silly collectDependents
+51 silly collectUpdates
+52 error initialize Error: No updated packages to publish.
+52 error initialize     at PublishCommand.initialize (/Users/hzhetao1/.config/yarn/global/node_modules/lerna/lib/commands/PublishCommand.js:204:18)
+52 error initialize     at PublishCommand._attempt (/Users/hzhetao1/.config/yarn/global/node_modules/lerna/lib/Command.js:265:21)
+52 error initialize     at PublishCommand.runCommand (/Users/hzhetao1/.config/yarn/global/node_modules/lerna/lib/Command.js:251:12)
+52 error initialize     at PublishCommand.run (/Users/hzhetao1/.config/yarn/global/node_modules/lerna/lib/Command.js:148:12)
+52 error initialize     at Object.handler (/Users/hzhetao1/.config/yarn/global/node_modules/lerna/lib/commands/PublishCommand.js:83:43)
+52 error initialize     at Object.self.runCommand (/Users/hzhetao1/.config/yarn/global/node_modules/lerna/node_modules/yargs/lib/command.js:231:22)
+52 error initialize     at Object.Yargs.self._parseArgs (/Users/hzhetao1/.config/yarn/global/node_modules/lerna/node_modules/yargs/yargs.js:990:30)
+52 error initialize     at Object.Yargs.self.parse (/Users/hzhetao1/.config/yarn/global/node_modules/lerna/node_modules/yargs/yargs.js:533:23)
+52 error initialize     at Object.<anonymous> (/Users/hzhetao1/.config/yarn/global/node_modules/lerna/bin/lerna.js:4:25)
+52 error initialize     at Module._compile (module.js:570:32)
+52 error initialize  callback with error
+52 error initialize  Error: No updated packages to publish.
+52 error initialize     at PublishCommand.initialize (/Users/hzhetao1/.config/yarn/global/node_modules/lerna/lib/commands/PublishCommand.js:204:18)
+52 error initialize     at PublishCommand._attempt (/Users/hzhetao1/.config/yarn/global/node_modules/lerna/lib/Command.js:265:21)
+52 error initialize     at PublishCommand.runCommand (/Users/hzhetao1/.config/yarn/global/node_modules/lerna/lib/Command.js:251:12)
+52 error initialize     at PublishCommand.run (/Users/hzhetao1/.config/yarn/global/node_modules/lerna/lib/Command.js:148:12)
+52 error initialize     at Object.handler (/Users/hzhetao1/.config/yarn/global/node_modules/lerna/lib/commands/PublishCommand.js:83:43)
+52 error initialize     at Object.self.runCommand (/Users/hzhetao1/.config/yarn/global/node_modules/lerna/node_modules/yargs/lib/command.js:231:22)
+52 error initialize     at Object.Yargs.self._parseArgs (/Users/hzhetao1/.config/yarn/global/node_modules/lerna/node_modules/yargs/yargs.js:990:30)
+52 error initialize     at Object.Yargs.self.parse (/Users/hzhetao1/.config/yarn/global/node_modules/lerna/node_modules/yargs/yargs.js:533:23)
+52 error initialize     at Object.<anonymous> (/Users/hzhetao1/.config/yarn/global/node_modules/lerna/bin/lerna.js:4:25)
+52 error initialize     at Module._compile (module.js:570:32)
