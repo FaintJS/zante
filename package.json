@@ -1,6 +1,6 @@
 {
     "name": "zante",
-    "version": "0.1.9-8",
+    "version": "0.1.9-9",
     "description": "buil tool on the top of webpack",
     "main": "index.js",
     "bin": {
