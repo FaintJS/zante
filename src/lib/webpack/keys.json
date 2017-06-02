@@ -1,0 +1,23 @@
+[
+  "entry",
+  "output",
+  "module",
+  "resolve",
+  "performance",
+  "devtool",
+  "context",
+  "target",
+  "externals",
+  "stats",
+  "devServer",
+  "resolveLoader",
+  "profile",
+  "bail",
+  "cache",
+  "watch",
+  "watchOptions",
+  "node",
+  "recordsPath",
+  "recordsInputPath",
+  "recordsOutputPath"
+]

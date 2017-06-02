@@ -1,9 +1,10 @@
-const path = require('path')
-const fs = require('fs')
-const chalk = require('chalk')
+import path from 'path'
+import fs from 'fs'
+import chalk from 'chalk'
 
-module.exports = (app) => {
-  let rc, rcType
+export default (app) => {
+  let rc
+  let rcType
   let rcPath = {
     js: path.join(app, '.zanterc.js'),
     json: path.join(app, '.zanterc.json'),
@@ -28,6 +29,7 @@ module.exports = (app) => {
   }
 
   if (validateRC(rc)) {
+    rc.env = rc.env || {}
     return rc
   } else {
     console.log(chalk.red(`❌  zante: file ${rc[rcType]} is not valid JSON or Object\n`))

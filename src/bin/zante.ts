@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-const program = require('commander')
-const version = require('../package.json').version
+import program from 'commander'
+const version = require('../../package.json').version
 program
   .version(version)
   .command('start', 'start with zante')
