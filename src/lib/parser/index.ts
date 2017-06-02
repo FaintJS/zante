@@ -45,16 +45,16 @@ export default class Parser {
 
         let ret = await func.apply(global, args)
         webpackConfig = ret.webpackConfig || webpackConfig
-        scripts = ret.scripts || scripts
-        next()
+        scripts = ret.scripts ? ret.scripts : scripts
+        return next()
       }
     }
     await next()
     this.webpackConfig = webpackConfig
     this.userConfig = userConfig
     this.scripts = scripts
-
     let ret = new PostProcessor(this).process()
+    console.log((this.webpackConfig.module as any).rules)
     return {
       webpackConfig: this.webpackConfig,
       userConfig: this.userConfig,
@@ -63,7 +63,7 @@ export default class Parser {
   }
 
   getInitialWebpackConfig (): webpack.Configuration {
-    let webpackBaseConfig = require('./webpack.default')(this.app)
+    let webpackBaseConfig = require('./webpack.default').default(this.app)
     let baseConfig = utils.onlyKeys(
       Object.assign({}, this.rc),
       require('../webpack/keys.json')
@@ -77,7 +77,7 @@ export default class Parser {
   }
 
   loadUserConfig (): UserConfig {
-    let defaultConfig = require('./userConfig.default')(this.app)
+    let defaultConfig = require('./userConfig.default').default(this.app)
     let config = utils.onlyKeys(
       Object.assign({}, this.rc, this.rc.env[this.env]),
       Object.keys(defaultConfig)
@@ -97,7 +97,7 @@ export default class Parser {
     }
 
     if (typeof func !== 'function') {
-      let pluginPath = path.join(__dirname, '../plugins', func)
+      let pluginPath = path.join(__dirname, '../../plugins', func)
       utils.error(
         !fs.existsSync(pluginPath),
         `plugin ${func} is not a built-in plugin`

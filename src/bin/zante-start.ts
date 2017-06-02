@@ -9,10 +9,13 @@ async function start () {
   const app = process.cwd()
 
   const rc = loadRC(app)
+
   console.log(chalk.white('✅  zante: load rc file'))
 
-  let parser = new Parser({app, rc, env: process.env.NODE_ENV})
+  
   try {
+    let parser = new Parser({app, rc, env: process.env.NODE_ENV})
+
     let {
       webpackConfig,
       userConfig,

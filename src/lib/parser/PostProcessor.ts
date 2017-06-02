@@ -9,12 +9,8 @@ export default class {
   }
 
   process () {
-    let {
-      webpackConfig,
-      userConfig,
-      scripts
-    } = this.parser
-
+    this.safePath()
+    this.ruleInclude()
   }
 
   _safePath (file: string) {
@@ -55,7 +51,7 @@ export default class {
   ruleInclude () {
     let rules = (this.parser.webpackConfig.module as webpack.NewModule).rules || (this.parser.webpackConfig.module as webpack.OldModule).loaders
     rules.forEach(rule => {
-      if (!rule.include || (Array.isArray(rule.include) && rule.include.length === 0)) {
+      if (!rule.include) {
         rule.include = this.parser.userConfig.source
       }
     })

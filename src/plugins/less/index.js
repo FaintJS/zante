@@ -1,12 +1,12 @@
 module.exports = ({ webpackConfig }) => {
   webpackConfig.module.rules.push({
-    test: /\.less$/,
+    test: /^((?!.*global).)\.less$/,
     use: [
       'style-loader',
       {
         loader: 'css-loader',
         options: {
-          module: true,
+          modules: true,
           localIdentName: '[name]_[local]_[hash:base64:3]'
         }
       },
@@ -21,8 +21,7 @@ module.exports = ({ webpackConfig }) => {
       {
         loader: 'css-loader',
         options: {
-          module: false,
-          localIdentName: '[name]_[local]_[hash:base64:3]'
+          modules: false
         }
       },
       'postcss-loader',

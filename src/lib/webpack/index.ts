@@ -23,7 +23,7 @@ const start = async ({ app, webpackConfig, scripts, userConfig }: StartArgs) => 
         console.log(chalk.red(`❌ zante error: script catch error`))
         throw e
       }
-      next()
+      return next()
     }
   }
   await next()
