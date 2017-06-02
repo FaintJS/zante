@@ -1,22 +1,24 @@
 #!/usr/bin/env node
-import fs from 'fs'
-import path, { join } from 'path'
-import chalk from 'chalk'
-import shelljs from 'shelljs'
-import utils from '../lib/utils'
+import * as fs from 'fs'
+import * as path from 'path'
+import * as chalk from 'chalk'
+import * as shelljs from 'shelljs'
+import * as utils from '../lib/utils'
+
+const join = path.join
 
 // copy rc file: zanterc eslintrc babelrc
 const init = (app, rc) => {
   const defaultPath = join(__dirname, '../lib/default')
   const exts = ['', '.js', '.json']
   let exist = exts.some(ext => {
-    return fs.existsSync(path.join(app, `${rc}${ext}`))
+    return fs.existsSync(join(app, `${rc}${ext}`))
   })
 
   if (!exist) {
-    let defaultRC = exts.map(ext => path.join(defaultPath, `${rc}${ext}`)).filter(fs.existsSync)[0]
+    let defaultRC = exts.map(ext => join(defaultPath, `${rc}${ext}`)).filter(fs.existsSync)[0]
     let file = fs.readFileSync(defaultRC, 'utf-8')
-    fs.writeFileSync(path.join(app, path.basename(defaultRC)), file)
+    fs.writeFileSync(join(app, path.basename(defaultRC)), file)
   }
 }
 
@@ -42,11 +44,11 @@ const appendDependencies = (app: string) => {
 
 // copy app entry file
 const copyEntry = (app: string) => {
-  let target = path.join(app, 'src/app.js')
+  let target = join(app, 'src/app.js')
   if (!fs.existsSync(target)) {
     shelljs.mkdir('-p', path.dirname(target))
     shelljs.cp(
-      path.join(__dirname, '../lib/default/app.js'),
+      join(__dirname, '../lib/default/app.js'),
       path.dirname(target)
     )
   }

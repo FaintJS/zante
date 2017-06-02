@@ -9,7 +9,6 @@
         "sourceMap": false,
         "allowJs": true,
         "outDir": "dist",
-        "allowSyntheticDefaultImports": true,
         "moduleResolution": "node",
         "lib": [
             "es2015",

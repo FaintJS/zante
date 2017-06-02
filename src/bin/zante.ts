@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import program from 'commander'
+import * as program from 'commander'
 const version = require('../../package.json').version
 program
   .version(version)

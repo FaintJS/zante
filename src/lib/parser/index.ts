@@ -1,11 +1,11 @@
-import path from 'path'
-import fs from 'fs'
-import chalk from 'chalk'
-import _ from 'lodash'
-import webpack from 'webpack'
-import webpackMerge from 'webpack-merge'
+import * as path from 'path'
+import * as fs from 'fs'
+import * as chalk from 'chalk'
+import * as _ from 'lodash'
+import * as webpack from 'webpack'
+import * as webpackMerge from 'webpack-merge'
 
-import utils from '../utils'
+import * as utils from '../utils'
 import { RC, UserConfig } from '../../typings'
 import PostProcessor from './PostProcessor'
 

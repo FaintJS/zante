@@ -1,4 +1,4 @@
-import chalk from 'chalk'
+import * as chalk from 'chalk'
 export const uniqueArray = (array: Array<any>, back = false) => {
   let unique = []
   if (back) {

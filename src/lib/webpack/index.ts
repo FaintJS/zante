@@ -1,7 +1,7 @@
-import express from 'express'
-import chalk from 'chalk'
-import utils from '../utils'
-import webpack from 'webpack'
+import * as express from 'express'
+import * as chalk from 'chalk'
+import * as utils from '../utils'
+import * as webpack from 'webpack'
 import { UserConfig } from '../../typings'
 
 interface StartArgs {

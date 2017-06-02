@@ -1,4 +1,4 @@
-import webpack from '@types/webpack'
+import * as webpack from '@types/webpack'
 
 export interface UserConfig {
   server: boolean,
@@ -7,5 +7,6 @@ export interface UserConfig {
 }
 
 export interface RC extends webpack.Configuration, UserConfig {
-  env: RC
+  env: RC,
+  plugins?: Array<any>
 }

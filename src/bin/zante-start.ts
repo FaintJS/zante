@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import chalk from 'chalk'
+import * as chalk from 'chalk'
 
 import loadRC from '../lib/loadRC'
 import Parser from '../lib/parser'

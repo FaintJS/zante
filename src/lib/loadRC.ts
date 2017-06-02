@@ -1,6 +1,6 @@
-import path from 'path'
-import fs from 'fs'
-import chalk from 'chalk'
+import * as path from 'path'
+import * as fs from 'fs'
+import * as chalk from 'chalk'
 
 export default (app) => {
   let rc
