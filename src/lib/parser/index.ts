@@ -54,7 +54,6 @@ export default class Parser {
     this.userConfig = userConfig
     this.scripts = scripts
     let ret = new PostProcessor(this).process()
-    console.log((this.webpackConfig.module as any).rules)
     return {
       webpackConfig: this.webpackConfig,
       userConfig: this.userConfig,

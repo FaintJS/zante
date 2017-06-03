@@ -1,6 +1,8 @@
 module.exports = ({ webpackConfig }) => {
   webpackConfig.module.rules.push({
-    test: /^((?!.*global).)\.css$/,
+    test: (file) => {
+      return file.endsWith('.css') && !file.endsWith('.global.css')
+    },
     use: [
       'style-loader',
       {

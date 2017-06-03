@@ -6,15 +6,16 @@ export default class {
   parser: Parser
   constructor (parser: Parser) {
     this.parser = parser
+    this._safePath = this._safePath.bind(this)
   }
 
   process () {
+    // this.ruleInclude()    
     this.safePath()
-    this.ruleInclude()
   }
 
-  _safePath (file: string) {
-    if (file.startsWith('.')) {
+  _safePath (file: any) {
+    if (typeof file === 'string' && file.startsWith('.')) {
       return join(this.parser.app, file)
     } else {
       return file
@@ -46,6 +47,20 @@ export default class {
 
     // output
     parser.webpackConfig.output.path = this._safePath(parser.webpackConfig.output.path)
+
+    // include && exclude
+    let rules = (this.parser.webpackConfig.module as webpack.NewModule).rules || (this.parser.webpackConfig.module as webpack.OldModule).loaders
+    rules.forEach(rule => {
+      ['include', 'exclude'].forEach(key => {
+        if (rule[key]) {
+          if (Array.isArray(rule[key])) {
+            rule[key] = rule[key].map(this._safePath)
+          } else {
+            rule[key] = this._safePath(rule[key])
+          }
+        }       
+      })
+    })
   }
 
   ruleInclude () {

@@ -4,20 +4,21 @@ const webpackHotMiddleware = require('webpack-hot-middleware')
 
 module.exports = ({ webpackConfig, scripts, userConfig }) => {
   let entry = webpackConfig.entry
+  let options = 'path=http://localhost:' + userConfig.port + '/__webpack_hmr&quiet=true&reload=true'
   if (Array.isArray(entry)) {
     webpackConfig.entry = entry.map(app => {
       return [
-        'webpack-hot-middleware/client?reload=true',
-        'webpack-dev-server/client?http://0.0.0.0:' + userConfig.port,
-        'react-hot-loader/patch'
+        'react-hot-loader/patch',
+        'webpack/hot/only-dev-server',
+        'webpack-hot-middleware/client?'+ options
       ].concat(app)
     })
   } else {
     Object.keys(webpackConfig.entry).forEach(function (name) {
       webpackConfig.entry[name] = [
-        'webpack-hot-middleware/client?reload=true',
-        'webpack-dev-server/client?http://0.0.0.0:' + userConfig.port,
-        'react-hot-loader/patch'
+        'react-hot-loader/patch',
+        'webpack/hot/only-dev-server',
+        'webpack-hot-middleware/client?' + options
       ].concat(webpackConfig.entry[name])
     })
   }

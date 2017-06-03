@@ -2,7 +2,6 @@ const webpackDevMiddleware = require('webpack-dev-middleware')
 const webpack = require('webpack')
 module.exports = ({ webpackConfig, scripts }) => {
   webpackConfig.devtool = 'eval-source-map'
-  webpackConfig.plugins.push(new webpack.HashedModuleIdsPlugin())
   webpackConfig.plugins.push(new webpack.NoEmitOnErrorsPlugin())
 
   webpackConfig.plugins.push(new webpack.NamedModulesPlugin())
@@ -18,7 +17,8 @@ module.exports = ({ webpackConfig, scripts }) => {
       historyApiFallback: true,
       stats: {
         colors: true,
-        chunks: false
+        chunks: false,
+        warnings: false
       }
     }))
   })

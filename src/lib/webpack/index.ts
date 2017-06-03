@@ -1,7 +1,9 @@
 import * as express from 'express'
 import * as chalk from 'chalk'
-import * as utils from '../utils'
 import * as webpack from 'webpack'
+import {open} from 'openurl'
+
+import * as utils from '../utils'
 import { UserConfig } from '../../typings'
 
 interface StartArgs {
@@ -35,6 +37,9 @@ const start = async ({ app, webpackConfig, scripts, userConfig }: StartArgs) => 
         return reject()
       }
       console.log(`✅  zante Listen at ${port}`)
+      if (userConfig.open) {
+        open(`http://${host}:${port}`)
+      }
       resolve()
     })
   })
