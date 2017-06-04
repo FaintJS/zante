@@ -5,7 +5,7 @@ import loadRC from '../lib/loadRC'
 import Parser from '../lib/parser'
 import startWebpack from '../lib/webpack'
 
-async function start() {
+async function start () {
   try {
     const app = process.cwd()
 

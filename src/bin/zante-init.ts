@@ -9,7 +9,7 @@ const join = path.join
 
 // copy rc file: zanterc eslintrc babelrc
 const init = (app, rc) => {
-  const defaultPath = join(__dirname, '../lib/default')
+  const defaultPath = join(__dirname, '../../default')
   const exts = ['', '.js', '.json']
   let exist = exts.some(ext => {
     return fs.existsSync(join(app, `${rc}${ext}`))
@@ -24,7 +24,7 @@ const init = (app, rc) => {
 
 // insert default dependencies
 const appendDependencies = (app: string) => {
-  const deps = require('../lib/default/default-dependencies.json')
+  const deps = require('../../default/default-dependencies.json')
 
   utils.error(
     !fs.existsSync(join(app, 'package.json')),
@@ -48,7 +48,7 @@ const copyEntry = (app: string) => {
   if (!fs.existsSync(target)) {
     shelljs.mkdir('-p', path.dirname(target))
     shelljs.cp(
-      join(__dirname, '../lib/default/app.js'),
+      join(__dirname, '../../default/app.js'),
       path.dirname(target)
     )
   }

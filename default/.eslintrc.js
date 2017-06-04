@@ -7,7 +7,6 @@ module.exports = {
     browser: true
   },
   rules: {
-    'arrow-parens': 'off',
     'generator-star-spacing': 'off',
     'import/no-extraneous-dependencies': 'off'
   }

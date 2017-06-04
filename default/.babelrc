@@ -1,0 +1,26 @@
+{
+  "presets": [
+    [
+      "env",
+      {
+        "targets": {
+          "browsers": [
+            "last 2 versions",
+            "safari >= 7"
+          ]
+        },
+        "modules": false,
+        "loose": true
+      }
+    ],
+    "stage-0"
+  ],
+  "env": {
+    "production": {
+      "plugins": []
+    },
+    "development": {
+      "plugins": []
+    }
+  }
+}

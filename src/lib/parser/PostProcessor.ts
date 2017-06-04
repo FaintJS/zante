@@ -10,7 +10,7 @@ export default class {
   }
 
   process () {
-    // this.ruleInclude()    
+    // this.ruleInclude()
     this.safePath()
   }
 
@@ -58,7 +58,7 @@ export default class {
           } else {
             rule[key] = this._safePath(rule[key])
           }
-        }       
+        }
       })
     })
   }
