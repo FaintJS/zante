@@ -28,6 +28,7 @@ module.exports = ({ webpackConfig, scripts }) => {
           chunkModules: true
         }) + '\n')
         server.use('/', express.static(webpackConfig.output.path))
+        resolve()
       })
     })
   })
